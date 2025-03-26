@@ -36,4 +36,3 @@ while True:
         print("This is an invalid phone number") 
 
 print(customer_details) 
-

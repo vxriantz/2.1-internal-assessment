@@ -6,8 +6,6 @@ import re
 customer_details = {}
 
 
-
-
 def click_collect():
     #regular expression pattern for phone validation 
     pattern = r"^\d{8,10}$" 
