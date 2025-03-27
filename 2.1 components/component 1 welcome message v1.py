@@ -5,7 +5,7 @@ import random
 from random import randint
 
 #list of names used by BOT
-bot_names = ["David", "Rose", "Georgina", "Oliver", "Denise", "Jecilla", "Brody", "James", "Steve", "Natasha"]
+bot_names = ["Anthony", "Clint", "Gamora", "Howard", "Wanda", "Jecilla", "James", "Steve", "Natasha", "Sam"]
 
 
 num = randint(0,9)
