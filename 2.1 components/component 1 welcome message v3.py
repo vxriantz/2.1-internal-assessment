@@ -5,15 +5,15 @@ import random
 from random import randint
 
 #list of names used by BOT
-bot_names = ["David", "Rose", "Georgina", "Oliver", "Denise", "Jecilla", "James", "Steve", "Natasha", "Sam"]
+bot_names = ["Anthony", "Clint", "Gamora", "Howard", "Wanda", "Jecilla", "James", "Steve", "Natasha", "Sam"]
 
 
 def welcome():
     num = randint(0,9)
     name = (bot_names[num])
-    print("***Welcome to Dream Pizza***")
+    print("***Welcome to The Giftery Boutique***")
     print("***My name is", name,"***")
-    print("***I will be here to help you order your delicious Dream Pizza***")
+    print("***I will be here to help you order your special gift box***")
 
 
 def main():
