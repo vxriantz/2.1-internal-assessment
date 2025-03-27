@@ -1,4 +1,4 @@
-"""This component details collecting a customer's details for a pizza establishment program"""
+"""This component details collecting a customer's details for a gift box establishment program"""
 
 #customer details dictionary
 customer_details = {}

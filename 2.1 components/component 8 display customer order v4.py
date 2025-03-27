@@ -1,4 +1,4 @@
-"""This component displays the customer's order details for a pizza establishment program"""
+"""This component displays the customer's order details for a gift box establishment program"""
 
 from colorama import Fore, Back, Style, init
 

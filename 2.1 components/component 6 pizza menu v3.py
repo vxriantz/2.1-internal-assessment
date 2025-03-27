@@ -1,4 +1,4 @@
-"""This component displays the menu for a pizza establishment program"""
+"""This component displays the menu for a gift box establishment program"""
 
 #list of pizza names
 pizza_names = ['Margherita', 'Pepperoni', 'Hawaiian', 'Cheese', 'Italian', 'Veggie', 'Vegan', 'Chicken Deluxe',

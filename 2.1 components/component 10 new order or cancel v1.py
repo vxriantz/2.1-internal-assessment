@@ -1,4 +1,4 @@
-"""This component will display a section for the user to make a new order or cancel their order for a pizza establishment program""" 
+"""This component will display a section for the user to make a new order or cancel their order for a gift box establishment program""" 
 
 #constant variables for low and high number for menus
 LOW = 1
