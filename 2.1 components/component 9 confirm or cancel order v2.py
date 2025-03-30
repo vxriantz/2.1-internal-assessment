@@ -1,4 +1,4 @@
-"""This component will display a section for the user to confirm or cancel their order for a gift box establishment program""" 
+"""This component will display a section for the user to confirm or cancel their order for a jewelry establishment program""" 
 
 #constant variables for low and high number for menus
 LOW = 1

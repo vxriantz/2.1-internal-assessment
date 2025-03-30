@@ -1,4 +1,4 @@
-"""This component displays the menu for a gift box establishment program"""
+"""This component displays the menu for a jewelry establishment program"""
 
 #import pandas library
 import pandas as pd
