@@ -1,4 +1,4 @@
-"""This component details collecting a customer's details for a jewelry establishment program"""
+"""This component details collecting a customer's details for a gift hamper establishment program"""
 
 import re 
 

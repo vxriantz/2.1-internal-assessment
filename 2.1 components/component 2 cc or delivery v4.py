@@ -1,4 +1,4 @@
-"""This component will detail the options for delivery for a jewelry establishment program"""
+"""This component will detail the options for delivery for a gift hamper establishment program"""
 LOW = 1
 HIGH = 2 
 print("Do you want click and collect or delivery?") 

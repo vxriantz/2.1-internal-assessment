@@ -1,4 +1,4 @@
-"""This component will detail the options for delivery for a jewelry establishment program"""
+"""This component will detail the options for delivery for a gift hamper establishment program"""
 #constant variables for low and high number for menus
 LOW = 1
 HIGH = 2 

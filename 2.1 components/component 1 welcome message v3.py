@@ -1,4 +1,4 @@
-"""This component will detail a welcome message for the beginning of a jewelry establishment program"""
+"""This component will detail a welcome message for the beginning of a gift hamper establishment program"""
 #import library random
 import random
 #import random integer
