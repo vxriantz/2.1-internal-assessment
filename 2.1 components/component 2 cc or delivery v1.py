@@ -1,4 +1,5 @@
 """This component will detail the options for delivery for a gift hamper establishment program"""
+
 print("Do you want click and collect or delivery?") 
 print("Enter 1 for click and collect")
 print("Enter 2 for delivery") 
