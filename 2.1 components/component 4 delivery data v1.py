@@ -18,12 +18,4 @@ while True:
         break 
 
 
-
-
-
-
-
-
-
-
 print(customer_details)

@@ -24,15 +24,5 @@ while True:
         break 
 
 
-
-
-
-#ask user for input
-
-
-
-
-#customer_details["phone"] = input("Please enter your phone number: ")
-
 print(customer_details)
 

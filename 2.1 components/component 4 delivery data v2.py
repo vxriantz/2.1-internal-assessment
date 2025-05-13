@@ -38,11 +38,6 @@ while True:
         #if alpha convert to title case and append to dictionary
         customer_details["suburb"] = response.title() 
         break 
-
-
-
-
-
-
+    
 
 print(customer_details)
