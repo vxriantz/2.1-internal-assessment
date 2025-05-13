@@ -5,7 +5,7 @@ import random
 from random import randint
 
 #list of names used by BOT
-bot_names = ["Anthony", "Clint", "Gamora", "Howard", "Wanda", "Jecilla", "James", "Steve", "Natasha", "Sam"]
+bot_names = ["Anthony", "Clint", "Gamora", "Howard", "Wanda", "Clara", "James", "Steve", "Natasha", "Sam"]
 
 
 def welcome():
