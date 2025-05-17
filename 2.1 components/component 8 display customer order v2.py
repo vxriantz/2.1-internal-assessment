@@ -1,13 +1,13 @@
-#list to store ordered pizzas
-order_list = ['Margherita', 'Hawaiian', 'Vegan', 'BBQ Chicken Deluxe'] 
-#list to store pizzas prices
-order_cost = [8.50, 8.50, 8.50, 13.50] 
+#list to store ordered hampers
+order_list = ['Birthday Bliss', 'Get Well Soon', 'Handwritten Card', 'Tea Sampler'] 
+#list to store hamper prices
+order_cost = [49.99, 39.99, 3.00, 8.00] 
 
-#customer detials 
+#customer details 
 customer_details = {'Name': 'Alex', 'Phone': '090800359', 'House': '45', 'Street': 'Harry', 'Suburb': 'Howick'}
 
 #print customer order 
-print(f"Customer Name: {customer_details['Name']}\nCustomer Phone: {customer_details['Phone']}\nCustomer Address: {customer_details['House']} {customer_details['Street']} {customer_details['Suburb']}")
+print(f"Customer Name: {customer_details['Name']}\nCustomer Phone: {customer_details['Phone']}\nCustomer Address: {customer_details['House']} {customer_details['Street']}, {customer_details['Suburb']}")
 
 count = 0
 for item in order_list: 
