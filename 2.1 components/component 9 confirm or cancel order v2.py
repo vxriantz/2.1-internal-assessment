@@ -34,7 +34,7 @@ def continue_cancel():
     del_pick = integer_validation(LOW, HIGH, question)
     if del_pick == 1:
         print("Thank you for your order!") 
-        print("Your order has been sent to the kitchen.") 
+        print("Your order has been sent to the manufacturers.") 
         print("You will receive a text when it is ready to pickup or out for delivery.")
     elif del_pick == 2:
         print("Your order has been cancelled.")

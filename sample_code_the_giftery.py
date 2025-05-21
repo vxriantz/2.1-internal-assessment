@@ -77,9 +77,8 @@ def view_pre_made_hampers():
         print(Fore.GREEN + "Hamper added to cart.")
         print(Style.RESET_ALL)
     else: 
-            print("")
+            print()
             print(Fore.RED + "Invalid option.") 
-            print(Style.RESET_ALL)
      
 # custom hamper function
 def create_custom_hamper():
@@ -93,9 +92,9 @@ def create_custom_hamper():
         print("\nAvailable Items:")
         for i, (item, price) in enumerate(custom_items.items(), 1): 
             print(f"{i}. {item} - ${price}") 
-        print("")
+        print()
         print("0. Finish and add to cart or return to menu") 
-        print("")
+        print()
         choice = input("Select an item number to add: ")
         if choice == "0": 
             break 
@@ -131,17 +130,14 @@ def view_cart():
 def checkout(): 
     if not cart: 
         print(Fore.RED + "\nYour cart is empty. Add hampers before checking out.") 
-        print(Style.RESET_ALL)
         return 
     view_cart()
     confirm = input("Would you like to confirm your order? (y/n): ").lower() 
     if confirm == "y": 
         print(Fore.GREEN + "Thank you for your purchase") 
-        print(Style.RESET_ALL)
         cart.clear() 
     else: 
         print(Fore.RED + "Order not confirmed.") 
-        print(Style.RESET_ALL)
 
 # Main LOOP 
 while True: 
@@ -156,10 +152,9 @@ while True:
     elif choice == "4": 
         checkout() 
     elif choice == "5": 
-        print("")
+        print()
         print(Fore.GREEN + "Thank you for visiting the Giftery. Goodbye!") 
         break 
     else: 
-        print("")
+        print()
         print(Fore.RED + "Invalid selection, please try again.")
-        print(Style.RESET_ALL)

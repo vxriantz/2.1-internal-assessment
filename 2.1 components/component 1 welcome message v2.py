@@ -10,6 +10,6 @@ bot_names = ["Anthony", "Clint", "Gamora", "Howard", "Wanda", "Clara", "James", 
 
 num = randint(0,9)
 name = (bot_names[num])
-print("***Welcome to Allure Atelier***")
+print("***Welcome to The Giftery***")
 print("***My name is", name,"***")
-print("***I will be here to help you order your alluring accessories!***")
+print("***I will be here to help you order your perfect gift hamper!***")
