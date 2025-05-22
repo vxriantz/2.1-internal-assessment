@@ -109,15 +109,17 @@ def welcome():
 # input request sent to integer_validation function for validation
 # valid input is returned and sent to if statements for appropriate action
 def pickup_delivery(): 
-    del_pick = ""
+    del_pick = "" #sets up del_pick variable
     print()
     print(Style.BRIGHT + "Do you want click and collect or delivery?") 
+    print()
+    print(Fore.YELLOW + "*** DISCLAIMER: $14 delivery fee is applied to orders for delivery under $50 ***")
     question = (f"Please enter {LOW} or {HIGH} ")
     print()
     print("Enter 1 for click and collect")
     print("Enter 2 for delivery") 
     print()
-    del_pick = integer_validation(LOW, HIGH, question)
+    del_pick = integer_validation(LOW, HIGH, question) #validates integer input from variable
     if del_pick == 1: #if input is 1, continue to click_collect function
         click_collect()
     elif del_pick == 2: #if input is 2, continue to click_collect and delivery_info functions
@@ -282,7 +284,7 @@ def custom_hamper_menu():
     # function stores hamper order data 
     # while loop until correct input is received then returns input to original function
 def hamper_order():
-    num_hampers = 0
+    num_hampers = 0 #
     while True: #sets up while loop
         try:
             num_hampers = int(input("How many hampers do you want to order? ")) #asks user for int input 
@@ -301,6 +303,7 @@ def hamper_order():
     print()
 
     #choose hampers from the menu
+        # while loop until correct input is received then returns input to original function
     print("Please choose hamper(s) from the menu") 
     print()
     for item in range(num_hampers): 
@@ -356,21 +359,22 @@ def print_order(del_pick):
     total_cost = sum(order_cost)
     #calculate delivery fee
     delivery_fee = 0
-    if total_cost < 50: 
+    if del_pick == 2 and total_cost < 50: #if delivery was chosen and order total is less than 50, runs below code
         delivery_fee = 14
-        print() 
         print(Fore.YELLOW + "Orders under $50 have a $14 delivery fee.")
-    
-    total_cost = total_cost + delivery_fee
-    print()
-    print(Style.BRIGHT + Fore.GREEN + f"Your total cost including the delivery is: ${total_cost:.2f}")
-    print() 
+        total_cost = total_cost + delivery_fee
+        print()
+        print(Style.BRIGHT + Fore.GREEN + f"Your total cost including the delivery is: ${total_cost:.2f}")
+        print() 
+    else: #if click and collect was chosen or delivery was chosen and order total is more than 50, runs below code
+         print(Style.BRIGHT + "Your total cost: ${:.2f}".format(total_cost))
+         print() 
 
 
 # confirm or cancel order 
     # uses integer_validation function to validate input
 def continue_cancel(): 
-    del_pick = ""
+    del_pick = "" #resets del_pick variable
     print("Do you want to continue with the order?") 
     print()
     question = (f"Please enter {LOW} or {HIGH} ")
@@ -395,7 +399,7 @@ def continue_cancel():
 # exit program or start a new order
     # uses integer_validation function to validate input
 def new_exit(): 
-    del_pick = ""
+    del_pick = "" #resets del_pick variable
     print("Do you want to start a new order or exit program?") 
     print()
     question = (f"Please enter {LOW} or {HIGH} ")
