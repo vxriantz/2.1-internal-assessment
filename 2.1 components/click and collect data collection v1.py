@@ -9,7 +9,7 @@ customer_details = {}
 pattern = r"^\d{8,10}$" 
 
 #while loop for validation of name
-while True: 
+while True: #sets up while loop
     question = "Please enter your name: " 
     response = input(question) 
     #removes blank spaces from response

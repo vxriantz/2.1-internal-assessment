@@ -1,23 +1,25 @@
 """This program will display a BOT that takes customer's orders for a gift hamper establishment"""
 # Pizza BOT
 # Programmer Alexander Goddard
+# Achievement Standard AS91896 & AS91897
 # Known Bugs - None 
 
-# import libraries
-import random
-import re
+# import libraries to support extended functionality
+import random #used to select random BOT names
+import re #used for regular expressions in input validation
+
 # import pandas library
-import pandas as pd
+import pandas as pd #used to display product menus in a structured table format
+
 # import system
 # enables program to use exit()
 import sys
 
 # import random integer
-from random import randint
+from random import randint #used to generate random numbers for BOT names
 
 # import colorama 
-# allows program to create coloured text
-from colorama import Fore, Back, Style, init
+from colorama import Fore, Back, Style, init # allows program to create coloured text
 
 # list of names used by BOT
 bot_names = ["Anthony", "Clint", "Gamora", "Howard", "Wanda", "Clara", "James", "Steve", "Natasha", "Sam"]
@@ -29,6 +31,7 @@ hamper_names = ['Birthday Bliss', 'Get Well Soon', 'Luxury Gourmet', 'New Baby H
                                    'Scented Candle', 'Bath Bomb', 'Face Mask', 'Essential Oil',
                                    'Stuffed Toy', 'Handwritten Card', 'Gift Wrapping', 'Reusable Basket',
                                    'Baby Booties', 'Teething Toy', 'Baby Shampoo', 'Soft Pacifier']
+
 # list of hamper prices
 hamper_prices = [49.99, 39.99, 89.99, 59.99, 44.99, 59.99, 49.99, 
                  12.00, 15.00, 10.00, 8.00, 11.00,
@@ -72,17 +75,19 @@ def integer_validation(low, high, question):
 
 
 # function validates string
-# 
+# removes blank spaces before checking
+# input must be string
+# while loop until correct input is received then returns input to original function 
+# value error results in error message and new input request
 def validate_alpha(question): 
     # while loop for validation of street name
-    while True:
-        response = input(question) 
+    while True: #sets up while loop
+        response = input(question) #asks for string input to 'question' variable
         # remove any spaces or blanks
-        no_blanks = re.sub(r"\s+", "", response)
+        no_blanks = re.sub(r"\s+", "", response) 
         # checking if input is alphabetical
         x = no_blanks.isalpha()
-        if x == False: 
-            # if not then print error message
+        if x == False: #if x is false then print error message
             print()
             print(Fore.RED + "Input must only contain letters")
             print()
@@ -91,12 +96,12 @@ def validate_alpha(question):
             return response
 
 
-# creates welcome message and generates random name for BOT
+# function creates welcome message and generates random name for BOT
 def welcome():
-    num = randint(0,9)
-    name = (bot_names[num])
+    num = randint(0,9) #chooses a random name from list of BOT names
+    name = (bot_names[num]) #puts randomly chosen name into a variable
     print("*** Welcome to The Giftery ***")
-    print("*** My name is", name,"***")
+    print("*** My name is", name,"***") #prints statement using the variable
     print("*** I will be here to help you order your perfect gift hamper! ***")
 
 
@@ -113,34 +118,34 @@ def pickup_delivery():
     print("Enter 2 for delivery") 
     print()
     del_pick = integer_validation(LOW, HIGH, question)
-    if del_pick == 1:
+    if del_pick == 1: #if input is 1, continue to click_collect function
         click_collect()
-    elif del_pick == 2:
+    elif del_pick == 2: #if input is 2, continue to click_collect and delivery_info functions
         click_collect()
         delivery_info()
     return del_pick
 
 
-# collect click and collect data
+# collect click and collect data function
     # function collects customer data for click and collect
     # phone number validated using regular expression pattern
     # string validated using isalpha
+    # while loop until correct input is received then returns input to original function 
 def click_collect():
-    # regular expression pattern for phone validation 
+    # regular expression pattern for phone validation (8 to 10 digits)
     pattern = r"^\d{8,10}$" 
 
     print()
 
     # while loop for validation of name
-    while True: 
+    while True: #sets up while loop
         question = "Please enter your name: " 
-        response = input(question) 
+        response = input(question) #asks for input to question variable
         # removes blank spaces from response
         no_blanks = re.sub(r"\s+", "", response) 
         # checking if input is alphabetical
         x = no_blanks.isalpha() 
-        if x == False: 
-            # if not then print error message
+        if x == False: # if x is false then print error message
             print()
             print(Fore.RED + "Input must only contain letters")
             print()
@@ -152,7 +157,7 @@ def click_collect():
     print()     
 
     # while loop for validation of phone number 
-    while True:
+    while True: #sets up while loop
         # ask user for input
         question = ("Please enter your phone number: ")
         response = input(question) 
@@ -160,9 +165,9 @@ def click_collect():
         no_blanks = re.sub(r"\s+", "", response) 
         if re.match(pattern,no_blanks): 
             phone_number = no_blanks
-            customer_details["Phone"] = phone_number 
+            customer_details["Phone"] = phone_number #append to dictionary
             break
-        else: 
+        else: #if input is not valid then print error message
             print()
             print(Fore.RED + "This is an invalid phone number") 
             print()
@@ -172,20 +177,20 @@ def click_collect():
     # function collects customer data for delivery
     # house number validated using regular expression pattern
     # string validated using isalpha
+    # while loop until correct input is received then returns input to original function    
 def delivery_info():
     # while loop for validation of house number
-    while True: 
+    while True: #sets up while loop
         print()
         question = "Please enter your house or apartment number: " 
-        response = input(question) 
-        if response == "":
+        response = input(question) #asks for input to 'question' variable
+        if response == "": #if input is blank, print error message
             print()
             print(Fore.RED + "Cannot be left blank") 
             print()
         else:
-            #removes blank spaces from response
-            no_blanks = re.sub(r"\s+", "", response) 
-            customer_details["House"] = response.title() 
+            no_blanks = re.sub(r"\s+", "", response) #removes blank spaces from response
+            customer_details["House"] = response.title() #converts to title case and appends to dictionary
             break 
 
     print()
@@ -273,21 +278,23 @@ def custom_hamper_menu():
     print()
 
 
-# customer pizza order
+# customer hamper order 
+    # function stores hamper order data 
+    # while loop until correct input is received then returns input to original function
 def hamper_order():
     num_hampers = 0
-    while True: 
+    while True: #sets up while loop
         try:
-            num_hampers = int(input("How many hampers do you want to order? "))
-            if num_hampers >=1 and num_hampers <= 5:
+            num_hampers = int(input("How many hampers do you want to order? ")) #asks user for int input 
+            if num_hampers >=1 and num_hampers <= 5: #adds boundaries to input request
                 break
             else:
                 print()
-                print(Fore.RED + "Your order must be between 1 and 5 hampers")
+                print(Fore.RED + "Your order must be between 1 and 5 hampers") #if input is out of given boundaries, prints error message
                 print()
         except ValueError:
             print() 
-            print(Fore.RED + "This is not a valid number")
+            print(Fore.RED + "This is not a valid number") #if input is not valid, prints error message
             print()
 
     print(num_hampers)
@@ -297,43 +304,43 @@ def hamper_order():
     print("Please choose hamper(s) from the menu") 
     print()
     for item in range(num_hampers): 
-        while num_hampers > 0: 
+        while num_hampers > 0: #sets up while loop
             while True:
                 try:
-                    hampers_ordered = int(input()) 
-                    if hampers_ordered >=1 and hampers_ordered <= 24:
+                    hampers_ordered = int(input()) #asks user for int input
+                    if hampers_ordered >=1 and hampers_ordered <= 24: #add boundaries to input request
                         break
-                    else:
+                    else: #if input is out of given boundaries, prints error message
                         print(Fore.RED + "Your hamper order must be between 1 and 24")
                         print()
-                except ValueError: 
+                except ValueError: #if input is not valid, prints error message
                     print(Fore.RED + "That is not a valid number")
                     print()
 
-            hampers_ordered = hampers_ordered-1
-            order_list.append(hamper_names[hampers_ordered]) 
-            order_cost.append(hamper_prices[hampers_ordered]) 
-            print("{} ${:.2f}".format(hamper_names[hampers_ordered], hamper_prices[hampers_ordered]))
-            num_hampers = num_hampers-1
+            hampers_ordered = hampers_ordered-1 #adjusts user's input to match python's zero-based indexing
+            order_list.append(hamper_names[hampers_ordered]) #adds name of selected hampers to the order list
+            order_cost.append(hamper_prices[hampers_ordered]) #add price of selected hampers to the order list
+            print("{} ${:.2f}".format(hamper_names[hampers_ordered], hamper_prices[hampers_ordered])) #prints name and price of selected hampers and formats to 2dp
+            num_hampers = num_hampers-1 #decreases the number of hampers the user still needs to order when ordering
 
     print(order_list)
     print(order_cost)
 
 
-# display customer order
-# prints customer order
-# accounting for differences with click and cllect or delivery data
-# takes del-pick as parameter
-# returns nothing
+# function displays customer order
+    # prints customer order
+    # accounting for differences with click and cllect or delivery data
+    # takes del-pick as parameter
+    # returns nothing
 def print_order(del_pick):
     print()
     # print customer order
     print(Fore.GREEN + "Customer Details")
     # to account for different data collected for click and collect and delivery
-    if del_pick ==1:
+    if del_pick ==1: #if input is 1, print below stored information
         print("Collection Method: Click and Collect")
         print(f"Customer Name: {customer_details['Name']}\nCustomer Phone: {customer_details['Phone']}")
-    else:
+    else: #if input is 2, print below stored information
      print("Collection Method: Delivery")
      print(f"Customer Name: {customer_details['Name']}\nCustomer Phone: {customer_details['Phone']}\nCustomer Address: {customer_details['House']} {customer_details['Street']}, {customer_details['Suburb']}")
      
@@ -341,7 +348,7 @@ def print_order(del_pick):
     print(Fore.GREEN + "Order Details")
 
     count = 0
-    for item in order_list: 
+    for item in order_list: #formats ordered items to bold, displays ordered items and cost of each item
         print(Style.BRIGHT + "Ordered: {} Cost: ${:.2f}".format(item, order_cost[count])) 
         count = count+1
         print()
@@ -371,7 +378,7 @@ def continue_cancel():
     print("Enter 2 to cancel") 
     print()
     del_pick = integer_validation(LOW, HIGH, question)
-    if del_pick == 1:
+    if del_pick == 1: #if input is 1, print thank you messages in green
         print()
         print(Fore.GREEN + "Thank you for your order!") 
         print()
@@ -379,7 +386,7 @@ def continue_cancel():
         print()
         print(Fore.GREEN + "You will receive a text when it is ready to pickup or out for delivery.")
         print()
-    elif del_pick == 2:
+    elif del_pick == 2: #if input is 2, print cancel message in red
         print()
         print(Fore.RED + "Your order has been cancelled.")
         print()
@@ -396,7 +403,7 @@ def new_exit():
     print("Enter 2 to exit") 
     print()
     del_pick = integer_validation(LOW, HIGH, question)
-    if del_pick == 1:
+    if del_pick == 1: #if input is 1, clear data from lists, and rerun main function
         print()
         print(Fore.GREEN + "New Order") 
         print()
@@ -405,7 +412,7 @@ def new_exit():
         order_cost.clear()
         # run main function
         main()
-    elif del_pick == 2:
+    elif del_pick == 2: #if input is 2, print thank you message, clear data from lists, and exit program
         print()
         print(Fore.GREEN + "Thank you for visiting the Giftery!")
         print()
@@ -415,7 +422,7 @@ def new_exit():
         # exit program
         exit()
 
-
+# create main function
 def main():
     welcome()
     del_pick = pickup_delivery()
@@ -426,6 +433,8 @@ def main():
     continue_cancel()
     new_exit()
 
+# runs all component functions in order
 main() 
 
+# prints receipt of user's input details
 print(customer_details)
