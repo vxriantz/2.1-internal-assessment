@@ -22,11 +22,6 @@ def integer_validation(low, high, question):
             (f"Please enter {LOW} or {HIGH} ")
 
 
-
-
-
-
-
 #function allowing users to choose either click and collect or delivery
 #input request sent to integer_validation function for validation
 #valid input is returned and sent to if statements for appropriate action
@@ -41,8 +36,6 @@ def pickup_delivery():
         print("Click and collect") 
     elif del_pick == 2:
         print("Delivery")
-
-
 
 
 pickup_delivery()
