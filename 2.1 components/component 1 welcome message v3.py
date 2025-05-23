@@ -11,9 +11,9 @@ bot_names = ["Anthony", "Clint", "Gamora", "Howard", "Wanda", "Clara", "James", 
 def welcome():
     num = randint(0,9)
     name = (bot_names[num])
-    print("***Welcome to The Giftery***")
-    print("***My name is", name,"***")
-    print("***I will be here to help you order your perfect gift hamper!***")
+    print("*** Welcome to The Giftery ***")
+    print("*** My name is", name,"***")
+    print("*** I will be here to help you order your perfect gift hamper! ***")
 
 
 def main():
